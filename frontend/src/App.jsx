@@ -1,6 +1,6 @@
 const App = () => {
   return (
-    <div>WebSocket Chat</div>
+    <div>Live Ticker</div>
   )
 }
 

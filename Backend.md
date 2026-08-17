@@ -593,7 +593,7 @@ server.listen(PORT, '0.0.0.0', () => console.log(`Server running on port ${PORT}
 **What it is:** The `ws` library's `WebSocketServer` attaches to the `http.Server` from §24 and starts listening for the WebSocket handshake. From there, two event names matter:
 
 - **`'connection'`** — fires once per client, the moment that client's WebSocket handshake completes. The callback receives that one client's socket (conventionally named `socket` or `ws`, not to be confused with the `ws` *package*).
-- **`'message'`** — fires on that individual client's socket every time *that client* sends data. This is where incoming chat messages arrive, one client at a time — it does not fire for every client's socket at once.
+- **`'message'`** — fires on that individual client's socket every time *that client* sends data. This is where incoming data arrives, one client at a time — it does not fire for every client's socket at once.
 
 ```js
 import { WebSocketServer } from 'ws'

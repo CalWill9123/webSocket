@@ -4,9 +4,13 @@ import 'dotenv/config'
 import mongoose from 'mongoose'
 import http from 'http'
 import {WebSocketServer} from 'ws'
+import authRouter from './routes/auth.js'
+import watchlistRouter from './routes/watchlist.js'
 const app = express()
 app.use(cors())
 app.use(express.json())
+app.use('/api/auth', authRouter)
+app.use('/api/watchlist', watchlistRouter)
 
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('connected to MongoDB'))
